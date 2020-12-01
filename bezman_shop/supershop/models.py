@@ -16,7 +16,7 @@ class Product(models.Model):
 
     )
     sizes = (
-        ('child','child'),
+        ('child', 'child'),
         ('medium', 'medium'),
         ('large', 'large'),
         ('XL', 'XL'),
