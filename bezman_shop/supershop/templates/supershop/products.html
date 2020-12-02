@@ -1,0 +1,29 @@
+<table>
+    <tr>
+        <td>Image</td>
+        <td>Name</td>
+        <td>Gender</td>
+        <td>Model</td>
+        <td>Size</td>
+        <td>Manufacturer</td>
+        <td>Type</td>
+        <td>Price</td>
+        <td>Buy</td>
+
+
+    </tr>
+{% for product in products %}
+    <tr>
+        <td><img src="{{ product.image.url }}" width="110" height="80"></td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.gender }}</td>
+        <td>{{ product.product_model }}</td>
+        <td>{{ product.size }}</td>
+        <td>{{ product.manufacturer }}</td>
+        <td>{{ product.product_type}}</td>
+        <td>{{ product.price }}</td>
+        <td><a href="{% url 'order-create' product.id %}">Buy</a></td>
+
+    </tr>
+{% endfor %}
+</table>

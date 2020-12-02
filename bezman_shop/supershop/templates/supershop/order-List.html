@@ -1,0 +1,17 @@
+
+<table>
+    <tr>
+        <td>Product Image</td>
+        <td>Product Name</td>
+        <td>Date</td>
+        <td>Status</td>
+    </tr>
+    {% for order in orders %}
+    <tr>
+        <td><img src="{{ order.product.image.url}}" width="50" height="50"></td>
+        <td>{{ order.product.name }}</td>
+        <td>{{ order.det_created }}</td>
+        <td>{{ order.status }}</td>
+    </tr>
+    {% endfor %}
+</table>
