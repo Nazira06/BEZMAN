@@ -1,5 +1,5 @@
 from django.db import models
-
+from accounts.models import Customer
 # Create your models here.
 class Product(models.Model):
     types = (
@@ -39,9 +39,10 @@ class Order(models.Model):
         ('In process', 'In process'),
         ('Delivered', 'Delivered')
     )
-    product = models.ForeignKey(Product,on_delete=models.SET_NULL, null=True)
+    product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
     det_created = models.DateTimeField(auto_now_add=True)
     status = models.CharField(max_length=20, choices=statuses, default='Not Delivered')
+    customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True )
 
     def __str__(self):
         return self.product.name + ' '+self.status

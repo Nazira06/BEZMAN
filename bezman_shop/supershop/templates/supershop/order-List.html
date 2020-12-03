@@ -5,6 +5,7 @@
         <td>Product Name</td>
         <td>Date</td>
         <td>Status</td>
+        <td>Customer</td>
     </tr>
     {% for order in orders %}
     <tr>
@@ -12,6 +13,7 @@
         <td>{{ order.product.name }}</td>
         <td>{{ order.det_created }}</td>
         <td>{{ order.status }}</td>
+        <td>{{ order.customer }}</td>
     </tr>
     {% endfor %}
 </table>

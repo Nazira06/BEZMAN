@@ -6,7 +6,7 @@ from .views import *
 
 urlpatterns = [
     path('products/', puoductlist, name='products'),
-    path('orders/',orderList, name='orders'),
+    path('orders/', orderList, name='orders'),
     path('order-create/<int:product_id>/', orderCreate, name='order-create'),
 
 ]

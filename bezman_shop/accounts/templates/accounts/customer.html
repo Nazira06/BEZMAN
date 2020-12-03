@@ -1,0 +1,17 @@
+<table>
+    <tr>
+        <td>Image</td>
+        <td>Full Name</td>
+        <td>Address</td>
+        <td>Phone</td>
+
+    </tr>
+     {% for customer in customers  %}
+    <tr>
+        <td><img src="{{ order.product.image.url}}" width="50" height="50"></td>
+        <td>{{ customer.name }}</td>
+        <td>{{ customer.address }}</td>
+        <td>{{ customer.phone }}</td>
+    </tr>
+    {%endfor%}
+</table>

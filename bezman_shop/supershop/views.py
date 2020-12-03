@@ -5,8 +5,8 @@ from .forms import *
 # Create your views here.
 def puoductlist(reguest):
     products = Product.objects.all()
-    context = {'products':products}
-    return render(reguest,'supershop/products.html', context)
+    context = {'products': products}
+    return render(reguest, 'supershop/products.html', context)
 
 def orderList(reguest):
     orders = Order.objects.all()
@@ -16,7 +16,7 @@ def orderList(reguest):
 def orderCreate(request, product_id):
     product = Product.objects.get(id=product_id)
 
-    form = OrderForm(initial={'product':product})
+    form = OrderForm(initial={'product': product})
 
     if request.method == 'POST':
         form = OrderForm(request.POST)
