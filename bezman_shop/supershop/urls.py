@@ -8,5 +8,6 @@ urlpatterns = [
     path('products/', puoductlist, name='products'),
     path('orders/', orderList, name='orders'),
     path('order-create/<int:product_id>/', orderCreate, name='order-create'),
+    path('order-update/<int:order_id>/', orderUpdate, name='order-update'),
 
 ]

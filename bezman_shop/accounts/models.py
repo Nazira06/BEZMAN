@@ -5,7 +5,7 @@ class Customer(models.Model):
     full_name = models.CharField(max_length=70)
     address = models.CharField(max_length=50)
     phone = models.IntegerField()
-
+    image = models.ImageField(blank=True)
 
     def __str__(self):
         return self.full_name

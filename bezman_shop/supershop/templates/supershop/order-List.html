@@ -1,6 +1,19 @@
 
 <table>
     <tr>
+        <td>Orders total</td>
+        <td>Orders delivered</td>
+        <td>Orders in process</td>
+        <td>Orders not delivered</td>
+
+
+
+    </tr>
+    <tr>
+        <td>{{orders_count}}</td>
+        <td>{{orders_delivered}}</td>
+    </tr>
+    <tr>
         <td>Product Image</td>
         <td>Product Name</td>
         <td>Date</td>
@@ -9,7 +22,7 @@
     </tr>
     {% for order in orders %}
     <tr>
-        <td><img src="{{ order.product.image.url}}" width="50" height="50"></td>
+        <td><img src="{{ order.product.image.url}}" width="150" height="80"></td>
         <td>{{ order.product.name }}</td>
         <td>{{ order.det_created }}</td>
         <td>{{ order.status }}</td>

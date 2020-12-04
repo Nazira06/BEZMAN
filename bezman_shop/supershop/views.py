@@ -10,7 +10,11 @@ def puoductlist(reguest):
 
 def orderList(reguest):
     orders = Order.objects.all()
-    context = {'orders': orders}
+    orders_count = orders.count()
+    orders_delivered = Order.objects.filter(status='Delivered').count()
+    #orders_in_process =
+
+    context = {'orders': orders, 'orders_count': orders.count, 'orders_delivered': orders_delivered}
     return render(reguest, 'supershop/order-List.html', context)
 
 def orderCreate(request, product_id):
@@ -25,3 +29,14 @@ def orderCreate(request, product_id):
             return redirect('orders')
     context = {'form': form}
     return render(request,'supershop/order-created.html', context)
+
+def orderUpdate(request, order_id):
+    order = Order.objects.get(id=order_id)
+    form = OrderForm(instance=order)
+    if request.method == 'POST':
+        form = OrderForm(request.POST, instance=order)
+        if form.is_valid():
+            form.save()
+            return redirect('orders')
+    context = {'form': form}
+    return render(request, 'supershop/order-created.html', context)
