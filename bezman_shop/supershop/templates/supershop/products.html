@@ -1,21 +1,37 @@
+<nav>
+    Hello, {{ request.user }}
+</nav>
+<form action="" method="GET">
+{{ filter.form }}
+<input type="submit" name="Confirm">
+</form>
+<style>
+    .b1 {
+    background: navy;
+    font-size: 9ph;}
+    .b2{ color: white;}
+</style>
+<button class="b1"><a href="{%url 'logout'%}" class="b2">logout</a></button>
+
+
 <table>
     <tr>
-        <td>Image</td>
-        <td>Name</td>
-        <td>Gender</td>
-        <td>Model</td>
-        <td>Size</td>
-        <td>Manufacturer</td>
-        <td>Type</td>
-        <td>Price</td>
-        <td>Buy</td>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Model</th>
+        <th>Size</th>
+        <th>Manufacturer</th>
+        <th>Type</th>
+        <th>Price</th>
+        <th>Buy</th>
 
 
     </tr>
 {% for product in products %}
     <tr>
         <td><img src="{{ product.image.url }}" width="150" height="80"></td>
-        <td>{{ product.name }}</td>
+       <td>{{ product.name }}</td>
         <td>{{ product.gender }}</td>
         <td>{{ product.product_model }}</td>
         <td>{{ product.size }}</td>
