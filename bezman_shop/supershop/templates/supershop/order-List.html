@@ -1,4 +1,5 @@
-
+{% extends 'supershop/base.html' %}
+{% block content %}
 <table>
     <tr>
         <td>Orders total</td>
@@ -13,20 +14,27 @@
         <td>{{orders_count}}</td>
         <td>{{orders_delivered}}</td>
     </tr>
+</table>
+<table class="table table-dark table-dark">
+    <thead>
     <tr>
-        <th>Product Image</th>
-        <th>Product Name</th>
-        <th>Date</th>
-        <th>Status</th>
-        <th>Customer</th>
+        <th scope="col">Product Image</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Date</th>
+        <th scope="col" >Status</th>
+        <th scope="col">Customer</th>
     </tr>
+    </thead>
+    <tbody>
     {% for order in orders %}
     <tr>
-        <td><img src="{{ order.product.image.url}}" width="150" height="80"></td>
+        <td scope="row"><img src="{{ order.product.image.url}}" width="150" height="80"></td>
         <td>{{ order.product.name }}</td>
         <td>{{ order.det_created }}</td>
         <td>{{ order.status }}</td>
         <td>{{ order.customer }}</td>
     </tr>
     {% endfor %}
+</tbody>
 </table>
+{% endblock %}

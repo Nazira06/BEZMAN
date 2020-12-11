@@ -1,6 +1,9 @@
+
 <nav>
     Hello, {{ request.user }}
+    <button><a href="{% url 'logout' %}">OUT</a> </button>
 </nav>
+
 <form action="" method="GET">
 {{ filter.form }}
 <input type="submit" name="Confirm">

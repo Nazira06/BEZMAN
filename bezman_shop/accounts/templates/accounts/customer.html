@@ -1,17 +1,22 @@
-<table>
-    <tr>
-        <th>Image</th>
-        <th>Full Name</th>
-        <th>Address</th>
-        <th>Phone</th>
+{% extends 'supershop/base.html' %}
+{% block content %}
 
-    </tr>
-     {% for customer in customers  %}
+<table class="table table=dark table=dark">
+    <thead>
+        <tr>
+            <th scope="col">Image</th>
+            <th scope="col">Full Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Phone</th>
+        </tr>
+    </thead>
+{% for customer in customers  %}
     <tr>
-        <td><img src="{{ order.product.image.url}}" width="150" height="80"></td>
-        <td>{{ customer.name }}</td>
+        <td><img src="{{ customer.image.url}}" width="150" height="80"></td>
+        <td>{{ customer.full_name }}</td>
         <td>{{ customer.address }}</td>
         <td>{{ customer.phone }}</td>
     </tr>
-    {%endfor%}
+{%endfor%}
 </table>
+{% endblock %}
